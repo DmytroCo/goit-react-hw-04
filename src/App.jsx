@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
-import SearchBar from "./components/SearchBar/Searchbar";
+import SearchBar from "./components/SearchBar/SearchBar";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
 import Loader from "./components/Loader/Loader";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
@@ -50,7 +50,7 @@ function App() {
               page,
               per_page: 15,
               query: topic,
-              client_id: "NCcq5dFv_hu6BanaDTQCip7pprCn2rAOKxu2idOWEFI",
+              client_id: "Ka85jvlitanXNyLsWsKpjWEuJ58_GshAPhtX6MvVQ4s",
             },
           }
         );
