@@ -1,18 +1,29 @@
 import Modal from "react-modal";
 import css from "./ImageModal.module.css";
 
-export default function ImageModal({ isOpen, closeModal, selectedImage }) {
-  const customStyles = {
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-    },
-  };
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    padding: "20px",
+    border: "none",
+    borderRadius: "8px",
+    overflow: "hidden",
+    maxWidth: "90%", 
+  },
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.75)", 
+    zIndex: 1000,
+  },
+};
 
+Modal.setAppElement("#root");
+
+export default function ImageModal({ isOpen, closeModal, selectedImage }) {
   if (!selectedImage) return null;
 
   return (
@@ -21,7 +32,7 @@ export default function ImageModal({ isOpen, closeModal, selectedImage }) {
       onRequestClose={closeModal}
       contentLabel="Image Modal"
       style={customStyles}
-      overlayClassName="Overlay"
+      overlayClassName={css.overlay} 
     >
       <div className={css.modal}>
         <h2 className={css.title}>
@@ -30,7 +41,6 @@ export default function ImageModal({ isOpen, closeModal, selectedImage }) {
         <img
           src={selectedImage.urls.regular}
           alt={selectedImage.alt_description}
-          style={{ width: "1240px", height: "620px" }}
           className={css.modalImage}
         />
         <button onClick={closeModal} className={css.modalBtn}>
