@@ -17,7 +17,7 @@ const customStyles = {
   },
   overlay: {
     backgroundColor: "rgba(0, 0, 0, 0.75)", 
-    zIndex: 1000,
+    zIndex: 1000, 
   },
 };
 
@@ -29,7 +29,7 @@ export default function ImageModal({ isOpen, closeModal, selectedImage }) {
   return (
     <Modal
       isOpen={isOpen}
-      onRequestClose={closeModal}
+      onRequestClose={closeModal} 
       contentLabel="Image Modal"
       style={customStyles}
       overlayClassName={css.overlay} 
